@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Input",
+    "dataType": "",
+    "defaultValue": "",
+    "comment": "",
+    "children": [
+      {
+        "id": 2,
+        "name": "start",
+        "dataType": "Bool",
+        "defaultValue": "FALSE",
+        "comment": ""
+      },
+      {
+        "id": 3,
+        "name": "stop",
+        "dataType": "Bool",
+        "defaultValue": "FALSE",
+        "comment": ""
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Output",
+    "dataType": "",
+    "defaultValue": "",
+    "comment": "",
+    "children": [
+      {
+        "id": 5,
+        "name": "running",
+        "dataType": "Bool",
+        "defaultValue": "FALSE",
+        "comment": ""
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Static",
+    "dataType": "",
+    "defaultValue": "",
+    "comment": "",
+    "children": [
+      {
+        "id": 7,
+        "name": "counter",
+        "dataType": "Int",
+        "defaultValue": "0",
+        "comment": ""
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Temp",
+    "dataType": "",
+    "defaultValue": "",
+    "comment": "",
+    "children": []
+  }
+]

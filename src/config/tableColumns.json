@@ -1,0 +1,24 @@
+{
+  "columns": [
+    {
+      "key": "name",
+      "title": "Name",
+      "width": 200
+    },
+    {
+      "key": "dataType",
+      "title": "Data type",
+      "width": 150
+    },
+    {
+      "key": "defaultValue",
+      "title": "Default value",
+      "width": 150
+    },
+    {
+      "key": "comment",
+      "title": "Comment",
+      "flex": 1
+    }
+  ]
+}

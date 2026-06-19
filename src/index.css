@@ -1,0 +1,611 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Microsoft YaHei', sans-serif;
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+/* 首页样式 */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.home-container h1 {
+  margin-bottom: 40px;
+  color: #333;
+  font-size: 28px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover {
+  background: #40a9ff;
+}
+
+/* 页面头部 */
+.page-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.back-link {
+  color: #1890ff;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* <Add new> marker 样式 */
+.add-new-marker {
+  color: #999;
+  font-style: italic;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 工具栏样式 */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.toolbar-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  background: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.2s;
+  margin: 0;
+}
+
+.toolbar-btn:hover {
+  background: #40a9ff;
+}
+
+.toolbar-btn:active {
+  background: #096dd9;
+}
+
+.toolbar-btn.danger {
+  background: #ff4d4f;
+}
+
+.toolbar-btn.danger:hover {
+  background: #ff7875;
+}
+
+.toolbar-btn.danger:active {
+  background: #d9363e;
+}
+
+.toolbar-btn:disabled {
+  background: #d9d9d9;
+  cursor: not-allowed;
+  color: #999;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 24px;
+  background: #e8e8e8;
+  margin: 0 8px;
+}
+
+/* 名称标题行样式 */
+.header-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.header-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* 表格容器样式 */
+.table-container {
+  flex: 1;
+  padding: 0;
+  background: #ece9d8;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+/* 表格包装器 */
+.table-wrapper {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  background: white;
+}
+
+/* 表格主体布局 */
+.table-main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* 行号列 */
+.table-row-header {
+  flex-shrink: 0;
+}
+
+.table-corner {
+  height: 20px;
+  background: linear-gradient(180deg, #eaf2ff 0%, #d4e0f0 100%);
+  border-top: 1px solid #f0f5ff;
+  border-left: 1px solid #f0f5ff;
+  border-right: 1px solid #98a7b9;
+  border-bottom: 1px solid #98a7b9;
+  width: 28px;
+  box-sizing: border-box;
+}
+
+.table-row-number {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-family: 'MS Shell Dlg', 'Segoe UI', Tahoma, sans-serif;
+  color: #000;
+  border: 1px solid #aca899;
+  border-left: none;
+  border-top: none;
+  width: 28px;
+  background: #ece9d8;
+  box-sizing: border-box;
+}
+
+/* 表格主体包装器 */
+.table-body-wrapper {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 表头 */
+.table-header {
+  display: flex;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.table-header-cell {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: 'MS Shell Dlg', 'Segoe UI', Tahoma, sans-serif;
+  color: #000;
+  background: linear-gradient(180deg, #eaf2ff 0%, #d4e0f0 100%);
+  border-top: 1px solid #f0f5ff;
+  border-left: 1px solid #f0f5ff;
+  border-right: 1px solid #98a7b9;
+  border-bottom: 1px solid #98a7b9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.table-header-cell:last-child {
+  border-right: none;
+}
+
+/* 表格内容 */
+.table-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* 数据行 */
+.table-row {
+  display: flex;
+}
+
+.table-row:nth-child(even) {
+  background: #f5f5f5;
+}
+
+.table-row:nth-child(odd) {
+  background: white;
+}
+
+.table-row:hover {
+  background: #e0e0e0;
+}
+
+/* 单元格 */
+.table-cell {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  height: 20px;
+  font-size: 12px;
+  font-family: 'MS Shell Dlg', 'Segoe UI', Tahoma, sans-serif;
+  color: #000;
+  border: 1px solid #d0d7e5;
+  border-top: none;
+  border-left: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.table-cell:last-child {
+  border-right: none;
+}
+
+/* === ag-Grid 自定义主题 - 经典 Windows 风格 === */
+.ag-theme-custom {
+  width: 100%;
+  height: 100%;
+  --ag-font-size: 12px;
+  --ag-font-family: 'MS Shell Dlg', 'Segoe UI', Tahoma, sans-serif;
+  --ag-background-color: white;
+  --ag-border-color: #d0d7e5;
+  --ag-row-border-color: #d0d7e5;
+  --ag-cell-horizontal-border: solid #d0d7e5 1px;
+}
+
+/* 容器 */
+.ag-theme-custom .ag-root-wrapper {
+  border: none;
+  border-radius: 0;
+}
+
+/* 表头 - 淡蓝色渐变 3D 效果 */
+.ag-theme-custom .ag-header {
+  background: linear-gradient(180deg, #eaf2ff 0%, #d4e0f0 100%);
+  border-bottom: none;
+}
+
+.ag-theme-custom .ag-header-cell {
+  background: linear-gradient(180deg, #eaf2ff 0%, #d4e0f0 100%);
+  border-top: 1px solid #f0f5ff;
+  border-left: 1px solid #f0f5ff;
+  border-right: 1px solid #98a7b9;
+  border-bottom: 1px solid #98a7b9;
+  font-weight: normal;
+  color: #000;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.ag-theme-custom .ag-header-cell:first-child {
+  border-left: none;
+}
+
+/* 行号列表头（左侧固定列） */
+.ag-theme-custom .ag-pinned-left-header .ag-header-cell {
+  background: linear-gradient(180deg, #eaf2ff 0%, #d4e0f0 100%);
+  border-top: 1px solid #f0f5ff;
+  border-left: 1px solid #f0f5ff;
+  border-right: 1px solid #98a7b9;
+  border-bottom: 1px solid #98a7b9;
+}
+
+/* 数据行 */
+.ag-theme-custom .ag-row {
+  border: none;
+}
+
+.ag-theme-custom .ag-row-even {
+  background-color: #f5f5f5;
+}
+
+.ag-theme-custom .ag-row-odd {
+  background-color: white;
+}
+
+.ag-theme-custom .ag-row:hover {
+  background-color: #e0e0e0 !important;
+}
+
+.ag-theme-custom .ag-row-selected {
+  background-color: #c1d2ee !important;
+}
+
+/* 单元格 */
+.ag-theme-custom .ag-cell {
+  border: 1px solid #d0d7e5;
+  border-top: none;
+  border-left: none;
+  padding-left: 4px;
+  padding-right: 4px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.ag-theme-custom .ag-cell:last-child {
+  border-right: none;
+}
+
+/* 行号列单元格（左侧固定列） - 米色背景 */
+.ag-theme-custom .ag-pinned-left-cols-container .ag-cell {
+  background: #ece9d8;
+  border: 1px solid #aca899;
+  border-left: none;
+  border-top: none;
+  justify-content: center;
+  padding: 0;
+}
+
+/* 树形分组单元格 - 让展开箭头居中 */
+.ag-theme-custom .ag-pinned-left-cols-container .ag-group-cell {
+  justify-content: center;
+}
+
+.ag-theme-custom .ag-pinned-left-cols-container .ag-cell-wrapper {
+  justify-content: center;
+}
+
+/* 树形展开箭头 */
+.ag-theme-custom .ag-group-expanded .ag-icon,
+.ag-theme-custom .ag-group-contracted .ag-icon {
+  color: #000;
+  font-size: 10px;
+}
+
+.ag-theme-custom .ag-group-contracted span[ref="eContracted"],
+.ag-theme-custom .ag-group-expanded span[ref="eExpanded"] {
+  margin-right: 4px;
+}
+
+/* 树形缩进 */
+.ag-theme-custom .ag-cell-wrapper {
+  align-items: center;
+}
+
+/* 隐藏默认的分组计数 */
+.ag-theme-custom .ag-group-child-count {
+  display: none;
+}
+
+/* === Ant Design Table 自定义样式 - 经典 Windows 风格 === */
+.ant-table-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/* 表头样式 - 淡蓝色渐变 3D 效果 */
+.ant-table-thead > tr > th {
+  background: linear-gradient(180deg, #eaf2ff 0%, #d4e0f0 100%) !important;
+  border-top: 1px solid #f0f5ff !important;
+  border-left: 1px solid #f0f5ff !important;
+  border-right: 1px solid #98a7b9 !important;
+  border-bottom: 1px solid #98a7b9 !important;
+  padding: 4px 8px !important;
+  font-weight: normal !important;
+  font-size: 12px !important;
+  font-family: 'MS Shell Dlg', 'Segoe UI', Tahoma, sans-serif !important;
+  color: #000 !important;
+}
+
+.ant-table-thead > tr > th:first-child {
+  border-left: none !important;
+}
+
+/* 行号单元格 - 米色背景 */
+.row-number-cell,
+.ant-table-tbody > tr > td.row-number-cell {
+  background: #ece9d8 !important;
+  border: 1px solid #aca899 !important;
+  border-left: none !important;
+  border-top: none !important;
+  text-align: center !important;
+  padding: 4px 0 !important;
+}
+
+/* 数据行样式 */
+.ant-table-tbody > tr > td {
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  font-family: 'MS Shell Dlg', 'Segoe UI', Tahoma, sans-serif !important;
+  border: 1px solid #d0d7e5 !important;
+  border-top: none !important;
+  border-left: none !important;
+}
+
+.ant-table-tbody > tr > td:first-child {
+  border-left: none !important;
+}
+
+/* 交替行颜色 - 斑马纹 */
+.ant-table-tbody > tr:nth-child(even) {
+  background-color: #f5f5f5 !important;
+}
+
+/* 选中行高亮样式 */
+.ant-table-tbody > tr.selected-row > td {
+  background-color: #d6e8ff !important;
+}
+
+.ant-table-tbody > tr.selected-row:nth-child(even) > td {
+  background-color: #c6dfff !important;
+}
+
+.ant-table-tbody > tr:nth-child(odd) {
+  background-color: white !important;
+}
+
+/* 行悬停效果 */
+.ant-table-tbody > tr:hover > td {
+  background-color: #e0e0e0 !important;
+}
+
+/* 选中行样式 */
+.ant-table-tbody > tr.ant-table-row-selected > td {
+  background-color: #c1d2ee !important;
+}
+
+/* 树形展开箭头 */
+.ant-table-row-expand-icon {
+  font-size: 10px !important;
+  margin-right: 4px !important;
+}
+
+.ant-table-row-expand-icon-collapsed::before {
+  content: '▶' !important;
+}
+
+.ant-table-row-expand-icon-expanded::before {
+  content: '▼' !important;
+}
+
+/* 树形缩进 */
+.ant-table-indent-level {
+  display: inline-block;
+  width: 16px;
+}
+
+/* name 列样式 */
+.tree-name-column {
+  white-space: nowrap;
+}
+
+/* 强制保持树形缩进 - 解决编辑后缩进丢失问题 */
+.ant-table-tbody .ant-table-cell .ant-table-indent-level {
+  display: inline-block !important;
+  width: 16px !important;
+  visibility: visible !important;
+}
+
+/* 移除默认边框 */
+.ant-table {
+  border: none !important;
+}
+
+.ant-table-container {
+  border: none !important;
+}
+
+/* 滚动条样式 */
+.ant-table-body::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.ant-table-body::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border: 1px solid #d0d0d0;
+}
+
+.ant-table-body::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 1px solid #a0a0a0;
+}
+
+.ant-table-body::-webkit-scrollbar-thumb:hover {
+  background: #b0b0b0;
+}
+
+/* ============================================================
+   隐藏 Ant Design 内部测量行（那个 0px 高度的空行）
+   ============================================================ */
+
+/* 隐藏列宽测量行 - 这就是你看到的第一个空行！ */
+.ant-table-measure-row {
+  display: none !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* 确保测量行内部也不占空间 */
+.ant-table-measure-row td,
+.ant-table-measure-row div {
+  height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* ============================================================
+   No data 面板样式（正常显示）
+   ============================================================ */
+.ant-table-placeholder {
+  background: #f5f5f5 !important;
+}
+
+.ant-table-placeholder .ant-empty-img-simple {
+  opacity: 0.4;
+}
+
+.ant-table-placeholder .ant-empty-description {
+  color: #999;
+  font-size: 12px;
+}
+
+/* 确保 placeholder 行没有边框 */
+.ant-table-tbody > tr.ant-table-placeholder > td {
+  border: none !important;
+  border-bottom: none !important;
+}
+

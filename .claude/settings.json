@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo \"BUILD_EXIT_CODE: $?\")",
+      "Bash(npm install *)",
+      "Bash(dir dist *)",
+      "Bash(npm -v)",
+      "Bash(npx tsc *)",
+      "Bash(powershell -Command \"Get-Content 'd:\\\\ws\\\\react\\\\TiaPortal\\\\src\\\\config\\\\mockDataWithoutTree.json' | Write-Host\")"
+    ]
+  }
+}
