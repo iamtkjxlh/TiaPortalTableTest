@@ -7,10 +7,11 @@ A TIA Portal-style hierarchical tree data table application with classic Windows
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
-2. [Features](#features)
-3. [Project Structure](#project-structure)
-4. [Architecture](#architecture)
-5. [中文文档](#中文文档)
+2. [Testing and Verification](#testing-and-verification)
+3. [Features](#features)
+4. [Project Structure](#project-structure)
+5. [Architecture](#architecture)
+6. [中文文档](#中文文档)
 
 ---
 
@@ -48,6 +49,53 @@ A TIA Portal-style hierarchical tree data table application with classic Windows
 | `npm run dev` | Start development server with hot reload |
 | `npm run build` | Build for production (output to `dist/`) |
 | `npm run preview` | Preview production build locally |
+| `npm run test` | Run tests in watch mode |
+| `npm run test:run` | Run the full test suite once |
+| `npm run test:coverage` | Run tests and generate coverage report |
+
+---
+
+## Testing and Verification
+
+This project uses **Vitest** with **React Testing Library** and **jsdom** for unit and component testing.
+
+### Test Coverage
+
+Current tests cover:
+
+- Shared table helper functions in `tableStoreUtils.ts`
+- Cell editing behavior in `useCellEdit.js`
+- Home page navigation links in `App.jsx`
+- Flat Ant Design table rendering, row-number visibility, invalid row filtering, row click handling, and selected-row styling in `AntTable.jsx`
+
+### Run Tests
+
+```bash
+npm run test:run
+```
+
+For interactive watch mode during development:
+
+```bash
+npm run test
+```
+
+To generate coverage:
+
+```bash
+npm run test:coverage
+```
+
+### Build Verification
+
+Before submitting changes, run both tests and production build:
+
+```bash
+npm run test:run
+npm run build
+```
+
+Both commands should complete successfully.
 
 ---
 
@@ -195,9 +243,10 @@ tableStoreUtils.ts (shared helpers)
 ## 目录
 
 1. [快速开始](#快速开始)
-2. [功能特性](#功能特性)
-3. [项目结构](#项目结构)
-4. [架构设计](#架构设计)
+2. [测试与验证](#测试与验证)
+3. [功能特性](#功能特性)
+4. [项目结构](#项目结构)
+5. [架构设计](#架构设计)
 
 ---
 
@@ -235,6 +284,53 @@ tableStoreUtils.ts (shared helpers)
 | `npm run dev` | 启动开发服务器，支持热更新 |
 | `npm run build` | 构建生产版本（输出到 `dist/` 目录） |
 | `npm run preview` | 本地预览生产构建 |
+| `npm run test` | 以监听模式运行测试 |
+| `npm run test:run` | 单次运行完整测试套件 |
+| `npm run test:coverage` | 运行测试并生成覆盖率报告 |
+
+---
+
+## 测试与验证
+
+本项目使用 **Vitest**、**React Testing Library** 和 **jsdom** 进行单元测试与组件测试。
+
+### 测试覆盖范围
+
+当前测试覆盖：
+
+- `tableStoreUtils.ts` 中的表格共享工具函数
+- `useCellEdit.js` 中的单元格编辑行为
+- `App.jsx` 中的首页导航链接
+- `AntTable.jsx` 中的扁平表格渲染、行号显示/隐藏、无效行过滤、行点击回调和选中行样式
+
+### 运行测试
+
+```bash
+npm run test:run
+```
+
+开发过程中可使用监听模式：
+
+```bash
+npm run test
+```
+
+生成测试覆盖率报告：
+
+```bash
+npm run test:coverage
+```
+
+### 构建验证
+
+提交变更前建议同时运行测试和生产构建：
+
+```bash
+npm run test:run
+npm run build
+```
+
+两个命令都应成功完成。
 
 ---
 
