@@ -31,14 +31,3 @@ export interface TableRow {
 export interface TableRowTree extends TableRow {
   children?: TableRowTree[]
 }
-
-// Add Marker 类型（用于 <Add new> 标记行）
-export interface AddMarkerRow {
-  id: string
-  name: string
-  isAddMarker: true
-  parentId: number
-}
-
-// 处理后的表格行类型（可能包含 marker）
-export type ProcessedTableRowTree = TableRowTree | AddMarkerRow

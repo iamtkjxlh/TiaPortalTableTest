@@ -6,7 +6,7 @@ import TableWithTree from './pages/TableWithTree.jsx'
 import TableWithoutTree from './pages/TableWithoutTree.jsx'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>

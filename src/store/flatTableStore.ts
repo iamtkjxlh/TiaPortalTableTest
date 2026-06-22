@@ -1,7 +1,9 @@
 import { create } from 'zustand'
 import { DataType, DEFAULT_BOOL_VALUE, DEFAULT_INT_VALUE } from '../types/index.ts'
 import type { TableRow } from '../types/index.ts'
-import initialFlatData from '../config/mockDataWithoutTree.json'
+import initialFlatDataJson from '../config/mockDataWithoutTree.json'
+
+const initialFlatData = initialFlatDataJson as TableRow[]
 import { isRowEmpty, createNewRow } from './tableStoreUtils.ts'
 
 interface FlatTableState {
@@ -15,7 +17,7 @@ interface FlatTableState {
   addRow: () => void
   deleteRow: () => void
   updateName: (id: number, newValue: string) => void
-  updateDataType: (id: number, newValue: string) => void
+  updateDataType: (id: number, newValue: DataType) => void
   updateDefaultValue: (id: number, newValue: string) => void
   updateComment: (id: number, newValue: string) => void
   isNameDuplicate: (id: number, name: string) => boolean

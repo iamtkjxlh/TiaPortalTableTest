@@ -31,6 +31,7 @@ function AntTable({
   const tableColumns = useMemo(() => {
     const cols = columns || tableConfig.columns
 
+    // 修改col里的每个值，形成一个新的列数组
     const result = cols.map((col) => ({
       key: col.key,
       title: col.title,

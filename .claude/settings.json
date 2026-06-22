@@ -6,7 +6,9 @@
       "Bash(dir dist *)",
       "Bash(npm -v)",
       "Bash(npx tsc *)",
-      "Bash(powershell -Command \"Get-Content 'd:\\\\ws\\\\react\\\\TiaPortal\\\\src\\\\config\\\\mockDataWithoutTree.json' | Write-Host\")"
+      "Bash(powershell -Command \"Get-Content 'd:\\\\ws\\\\react\\\\TiaPortal\\\\src\\\\config\\\\mockDataWithoutTree.json' | Write-Host\")",
+      "Bash(ls -1 tsconfig*)",
+      "Bash(ls -1 src/types/)"
     ]
   }
 }
